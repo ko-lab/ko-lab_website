@@ -13,6 +13,9 @@ services:
       - database
     volumes:
       - type: bind
+        source: ./php
+        target: /usr/local/etc/php
+      - type: bind
         source: ./deleted
         target: /var/deleted
       - type: bind
