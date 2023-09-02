@@ -13,6 +13,9 @@ services:
       - database
     volumes:
       - type: bind
+        source: ./mountedResources
+        target: /var/www/html/resources/mounted
+      - type: bind
         source: ./php
         target: /usr/local/etc/php
       - type: bind
