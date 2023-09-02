@@ -1,0 +1,34 @@
+# MediaWiki with MariaDB
+#
+# Access via "http://localhost:8080"
+#   (or "http://$(docker-machine ip):8080" if using docker-machine)
+version: '3'
+services:
+  mediawiki:
+    image: mediawiki
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - type: bind
+        source: ./deleted
+        target: /var/deleted
+      - type: bind
+        source: ./images
+        target: /var/www/html/images
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  # This key also defines the name of the database host used during setup instead of the default "localhost"
+  database:
+    image: mysql 
+    restart: always
+    environment:
+      MYSQL_DATABASE: ko-lab_wiki 
+      MYSQL_USER: admin 
+      MYSQL_PASSWORD: admin
+      MYSQL_RANDOM_ROOT_PASSWORD: 'no'
+    volumes:
+      - type: bind
+        source: ./db
+        target: /var/lib/mysql
