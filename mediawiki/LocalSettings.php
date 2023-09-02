@@ -163,3 +163,5 @@ wfLoadExtension( 'WikiEditor' );
 $wgFileExtensions[] = 'svg';
 $wgAllowTitlesInSVG = true;
 $wgFavicon="$wgResourceBasePath/images/5/56/Ko-lab-logo.svg";
+$wgGroupPermissions['*']['createaccount'] = false;
+
