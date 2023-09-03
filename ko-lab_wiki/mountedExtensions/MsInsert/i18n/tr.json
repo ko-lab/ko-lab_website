@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"BaRaN6161 TURK"
-		]
-	},
-	"msi-desc": "Editöre belirli sayfaların içeriğini eklemek için bir açılır menü ekler",
-	"msi-insert-template": "Bir şablon ekle"
-}
