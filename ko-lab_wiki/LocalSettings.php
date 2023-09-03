@@ -30,7 +30,7 @@ $wgMetaNamespace = "Ko-Lab_Wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://192.168.1.15:8080";
+$wgServer = "http://localhost:8080";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -178,3 +178,25 @@ $wgSMTP = array(
     'secure'   => 'ssl',
 );
 # End
+$wgEnableAutoRotation=true;
+wfLoadExtension( 'mounted/MsUpload');
+wfLoadExtension( 'mounted/MsLinks');
+wfLoadExtension( 'mounted/MsInsert');
+$wgMSU_useMsLinks = true; 
+$wgEnableWriteAPI = true; // Enable the API
+$wgEnableUploads = true; // Enable uploads
+$wgAllowJavaUploads = true; // Solves problem with Office 2007 and newer files (docx, xlsx, etc.). Deprecated: Removed in 1.39+
+$wgGroupPermissions['*']['upload'] = true; // Allow regular users to upload files
+// Make sure that the file types you want to upload are allowed:
+$wgFileExtensions = array('svg','png','gif','jpg','jpeg','doc','xls','pdf','ppt','tiff','bmp','docx','xlsx','pptx');
+wfLoadExtension( 'WikiEditor' );
+$wgWikiEditorRealtimePreview = true;
+$wgEnableWriteAPI = true; 
+$wgEnableUploads = true; 
+$wgAllowJavaUploads = true;
+$wgMSU_useDragDrop = true;
+$wgMSU_showAutoCat = true;
+$wgMSU_checkAutoCat = true;
+$wgMSU_useMsLinks = false;
+$wgMSU_confirmReplace = true; // Show the "Replace file?" checkbox
+$wgMSU_imgParams = '400px';
