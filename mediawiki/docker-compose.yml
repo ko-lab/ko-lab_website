@@ -29,6 +29,9 @@ services:
   database:
     image: mysql 
     restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
     environment:
       MYSQL_DATABASE: ko-lab_wiki 
       MYSQL_USER: admin 
