@@ -13,6 +13,9 @@ services:
       - database
     volumes:
       - type: bind
+        source: ./mountedExtensions
+        target: /var/www/html/extensions/mounted
+      - type: bind
         source: ./mountedResources
         target: /var/www/html/resources/mounted
       - type: bind
