@@ -46,8 +46,8 @@ $wgLogos = [
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "info@ko-lab.space";
-$wgPasswordSender = "info@ko-lab.space";
+$wgEmergencyContact = "kolabmechelen@gmail.com";
+$wgPasswordSender = "kolabmechelen@gmail.com";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
@@ -169,12 +169,12 @@ $wgGroupPermissions['*']['createpage'] = false;
 require_once __DIR__ . '/gitIgnoredPasswords.php';
 
 $wgSMTP = array(
-    'host'     => 'ssl://mail.gandi.net',
-    'IDHost'   => 'ko-lab.space',
+    'host'     => 'ssl://smtp.gmail.com',
     'port'     => 465,
     'auth'     => true,
-    'username' => 'info@ko-lab.space',
+    'username' => 'kolabmechelen@gmail.com',
     'password' => $customConfig['smtp_password'],
     'secure'   => 'ssl',
 );
-# End
+$wgPasswordSenderName = "Ko-Lab Wiki Password Resetter";
+$wgAllowHTMLEmail=true;
