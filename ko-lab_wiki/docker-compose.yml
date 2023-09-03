@@ -25,6 +25,7 @@ services:
         source: ./images
         target: /var/www/html/images
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./gitIgnoredPasswords.php:/var/www/html/gitIgnoredPasswords.php
   # This key also defines the name of the database host used during setup instead of the default "localhost"
   database:
     image: mysql 

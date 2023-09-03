@@ -166,4 +166,15 @@ $wgFavicon="$wgResourceBasePath/images/5/56/Ko-lab-logo.svg";
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
+require_once __DIR__ . '/gitIgnoredPasswords.php';
 
+$wgSMTP = array(
+    'host'     => 'ssl://mail.gandi.net',
+    'IDHost'   => 'ko-lab.space',
+    'port'     => 465,
+    'auth'     => true,
+    'username' => 'info@ko-lab.space',
+    'password' => $customConfig['smtp_password'],
+    'secure'   => 'ssl',
+);
+# End
