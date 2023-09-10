@@ -8,7 +8,8 @@ services:
     image: mediawiki
     restart: always
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
     links:
       - database
     volumes:
@@ -33,9 +34,9 @@ services:
   database:
     image: mysql 
     restart: always
-    ports:
-      - 3306:3306
-      - 33060:33060
+    expose:
+      - 3306
+      - 33060
     environment:
       MYSQL_DATABASE: ko-lab_wiki 
       MYSQL_USER: admin 

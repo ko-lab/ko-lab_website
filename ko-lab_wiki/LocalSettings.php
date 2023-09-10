@@ -30,7 +30,8 @@ $wgMetaNamespace = "Ko-Lab_Wiki";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost:8080";
+$wgServer = "//wiki.ko-lab.space";
+$wgCanonicalServer = "https://wiki.ko-lab.space";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
