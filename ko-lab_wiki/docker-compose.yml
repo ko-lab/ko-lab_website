@@ -4,38 +4,38 @@
 #   (or "http://$(docker-machine ip):8080" if using docker-machine)
 version: '3'
 services:
-  mediawiki:
-    image: mediawiki
-    restart: always
+  web:
+    image: ghcr.io/canastawiki/canasta:latest
+    restart: unless-stopped
     ports:
       - 8080:80
     links:
-      - database
+      - db
+    extra_hosts:
+      - "gateway.docker.internal:host-gateway"
+    depends_on:
+      - db
+    environment:
+      # Sourced from .env
+      - MW_SITE_SERVER=${MW_SITE_SERVER:-http://localhost}
+      - PHP_UPLOAD_MAX_FILESIZE=${PHP_UPLOAD_MAX_FILESIZE:-12M}
+      - PHP_POST_MAX_SIZE=${PHP_UPLOAD_MAX_FILESIZE:-12M}
+      - PHP_MAX_INPUT_VARS=${PHP_MAX_INPUT_VARS:-1000}
+      - MW_SITEMAP_SUBDIR
+      - MW_SITEMAP_IDENTIFIER
     volumes:
       - type: bind
-        source: ./mountedExtensions
-        target: /var/www/html/extensions/mounted
-      - type: bind
         source: ./mountedResources
-        target: /var/www/html/resources/mounted
-      - type: bind
-        source: ./php
-        target: /usr/local/etc/php
-      - type: bind
-        source: ./deleted
-        target: /var/deleted
-      - type: bind
-        source: ./images
-        target: /var/www/html/images
-      - ./LocalSettings.php:/var/www/html/LocalSettings.php
-      - ./gitIgnoredPasswords.php:/var/www/html/gitIgnoredPasswords.php
-  # This key also defines the name of the database host used during setup instead of the default "localhost"
-  database:
-    image: mysql 
+        target: /var/www/mediawiki/w/resources/mounted
+      - ./extensions:/var/www/mediawiki/w/user-extensions
+      - ./skins:/var/www/mediawiki/w/user-skins
+      - ./config:/mediawiki/config
+      - ./images:/mediawiki/images
+  db:
+    image: mysql:8.1
     restart: always
     expose:
-      - 3306
-      - 33060
+      - 3306 
     environment:
       MYSQL_DATABASE: ko-lab_wiki 
       MYSQL_USER: admin 
