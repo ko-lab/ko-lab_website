@@ -192,6 +192,10 @@ wfLoadExtension( 'TemplateData' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'Scribunto' );
+$wgScribuntoDefaultEngine = 'luastandalone';
+wfLoadExtension( 'CodeEditor' );
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgWikiEditorRealtimePreview = true;
 
 
 # KO-LAB SETTINGS END
