@@ -136,7 +136,6 @@ $wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
-#wfLoadSkin( 'Chameleon' );
 wfLoadSkin( 'CologneBlue' );
 wfLoadSkin( 'MinervaNeue' );
 wfLoadSkin( 'Modern' );
@@ -170,6 +169,9 @@ $wgSMTP = array(
 );
 wfLoadExtension( 'SemanticMediaWiki' );
 enableSemantics( 'wiki.ko-lab.space' );
+
+wfLoadExtension( 'Bootstrap' );
+wfLoadSkin( 'Chameleon' );
 # KO-LAB SETTINGS END
 
 # End
