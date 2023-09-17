@@ -45,8 +45,8 @@ $wgResourceBasePath = $wgScriptPath;
 ## or else you'll overwrite your logo when you upgrade!
 ### KO-LAB BLOCK START
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/resources/mounted/Ko_lab_logo_inverted.svg",
-	'icon' => "$wgResourceBasePath/images/5/56/Ko-lab-logo.svg",
+	'1x' => "$wgResourceBasePath/resources/mounted/ko-lab_logo.svg",
+	'icon' => "$wgResourceBasePath/resources/mounted/ko-lab_icon.svg",
 ];
 ### KO-LAB BLOCK END
 
@@ -152,7 +152,7 @@ wfLoadSkin( 'Vector' );
 # KO-LAB SETTINGS START
 $wgFileExtensions[] = 'svg';
 $wgAllowTitlesInSVG = true;
-$wgFavicon="$wgResourceBasePath/images/5/56/Ko-lab-logo.svg";
+$wgFavicon="$wgResourceBasePath/resources/mounted/ko-lab_icon.svg";
 $wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
@@ -172,6 +172,27 @@ enableSemantics( 'wiki.ko-lab.space' );
 
 wfLoadExtension( 'Bootstrap' );
 wfLoadSkin( 'Chameleon' );
+$wgDefaultSkin = 'Timeless';
+
+wfLoadExtension( 'CategoryTree' );
+wfLoadExtension( 'Cite' );
+wfLoadExtension( 'CiteThisPage' );
+#wfLoadExtension( 'DiscussionTools' );
+wfLoadExtension( 'Echo' );
+wfLoadExtension( 'ImageMap' );
+wfLoadExtension( 'InputBox' );
+wfLoadExtension( 'Linter' );
+wfLoadExtension( 'Math' );
+wfLoadExtension( 'MultimediaViewer' );
+wfLoadExtension( 'PageImages' );
+wfLoadExtension( 'ParserFunctions' );
+wfLoadExtension( 'PdfHandler' );
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+wfLoadExtension( 'TemplateData' );
+wfLoadExtension( 'VisualEditor' );
+wfLoadExtension( 'WikiEditor' );
+
+
 # KO-LAB SETTINGS END
 
 # End
