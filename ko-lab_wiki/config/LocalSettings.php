@@ -100,7 +100,7 @@ $wgUseInstantCommons = false;
 $wgPingback = true;
 
 # Site language code, should be one of the list in ./includes/languages/data/Names.php
-$wgLanguageCode = "nl";
+$wgLanguageCode = "en";
 
 # Time zone
 $wgLocaltimezone = "UTC";
@@ -191,6 +191,7 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'TemplateData' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'CodeMirror' );
 wfLoadExtension( 'Scribunto' );
 $wgScribuntoDefaultEngine = 'luastandalone';
 wfLoadExtension( 'CodeEditor' );
