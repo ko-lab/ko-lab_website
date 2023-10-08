@@ -197,7 +197,8 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 wfLoadExtension( 'CodeEditor' );
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgWikiEditorRealtimePreview = true;
-
+$wgUploadPath="$wgScriptPath/images";
+$wgUploadDirectory = "$IP/images";
 
 # KO-LAB SETTINGS END
 
